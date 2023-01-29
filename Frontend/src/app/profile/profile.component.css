@@ -1,0 +1,14 @@
+.comment{
+  background-color: #e7e7e7;
+  margin: .5vw 1vw;
+  padding: 1vw;
+  border-radius: 15px;
+}
+
+#userData{
+  margin-top: 5vh;
+}
+
+#userData p:not(:first-child){
+  margin: 0;
+}

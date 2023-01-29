@@ -1,0 +1,12 @@
+#loginForm{
+  width: 30%;
+  margin: auto;
+}
+
+#loginForm h1{
+  text-align: center;
+}
+
+.btn{
+  width: 100%;
+}

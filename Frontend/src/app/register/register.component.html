@@ -1,0 +1,51 @@
+<!--<div id="registerForm">-->
+<!--  <h1>Register</h1>-->
+<!--  <div class="form-floating mb-3">-->
+<!--    <input type="text" class="form-control" id="username" placeholder="Username" [(ngModel)]="newUser.username">-->
+<!--    <label for="username">Username</label>-->
+<!--  </div>-->
+<!--  <div class="form-floating mb-3">-->
+<!--    <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="newUser.password">-->
+<!--    <label for="password">Password</label>-->
+<!--  </div>-->
+<!--  <div class="form-floating mb-3">-->
+<!--    <input type="password" class="form-control" id="repeatPassword" placeholder="Password" [(ngModel)]="newUser.repeatPassword">-->
+<!--    <label for="repeatPassword">Repeat Password</label>-->
+<!--  </div>-->
+<!--  <div class="form-floating mb-3">-->
+<!--    <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="newUser.name">-->
+<!--    <label for="name">Name</label>-->
+<!--  </div>-->
+<!--  <div class="form-floating mb-3">-->
+<!--    <input type="email" class="form-control" id="email" placeholder="E-mail" [(ngModel)]="newUser.mail">-->
+<!--    <label for="email">E-mail</label>-->
+<!--  </div>-->
+<!--  <button class="btn btn-success" (click)="register()">Register!</button>-->
+<!--</div>-->
+
+<form [formGroup]="registerForm" (submit)="onSubmit()" id="registerForm">
+  <h1>Register</h1>
+  <fieldset class="form-group">
+    <label>Username:</label>
+    <input type="text" class="form-control" formControlName="username">
+  </fieldset>
+  <fieldset class="form-group">
+    <label>Password:</label>
+    <input type="password" class="form-control" formControlName="password">
+  </fieldset>
+  <fieldset class="form-group">
+    <label>Repeat password:</label>
+    <input type="password" class="form-control" formControlName="repeatPassword">
+  </fieldset>
+  <fieldset class="form-group">
+    <label>Name:</label>
+    <input type="text" class="form-control" formControlName="name">
+  </fieldset>
+  <fieldset class="form-group mb-3">
+    <label>E-mail:</label>
+    <input type="email" class="form-control" formControlName="mail">
+  </fieldset>
+  <input type="submit" value="Register" class="btn btn-success" [disabled]="!registerForm.valid">
+  <div id="backToLogin"><a [routerLink]="'/login'">Back to login</a></div>
+</form>
+

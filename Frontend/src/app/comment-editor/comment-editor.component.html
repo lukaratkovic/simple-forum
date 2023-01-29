@@ -1,0 +1,7 @@
+<form [formGroup]="commentForm" (submit)="onSubmit()">
+  <fieldset class="form-group">
+    <label>Comment: </label>
+    <textarea class="form-control" formControlName="comment"></textarea>
+  </fieldset>
+  <input type="submit" value="Send" class="btn btn-success" [disabled]="!commentForm.valid">
+</form>

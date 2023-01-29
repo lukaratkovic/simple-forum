@@ -1,0 +1,28 @@
+<div class="container">
+  <div id="userControl">
+    <!--Welcome [user] ([mail])-->
+    <div id="welcomeMessage" *ngIf="user && user.username && user.mail">
+      Welcome <a [routerLink]="['/profile',user.userId]">{{user.username}}</a> ({{user.mail}})
+    </div>
+    <a [routerLink]="'/'" (click)="logout()">Logout</a>
+  </div>
+
+  <div id="posts">
+    <h1>Posts ({{posts.length}}):</h1>
+    <div *ngFor="let p of posts | withUsername:users; let i = index;" class="comment">
+      by {{p.username}} at {{p.timestamp | date:"y-M-d H:mm:ss"}}
+      <p>{{p.comment}}</p>
+      <!-- TODO: Replace true in ngIf to check if user is logged in -->
+      <div *ngIf="user?.userId == p?.userId">
+        <button class="btn btn-danger" (click)="delete(i)">Delete</button>
+        <button class="btn btn-success" (click)="edit(i)">Edit</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-success" *ngIf="!commentEditorActive" (click)="newComment()">New Comment</button>
+  <button class="btn btn-danger" *ngIf="commentEditorActive" (click)="commentEditorActive = false;">Cancel</button>
+
+  <app-comment-editor *ngIf="commentEditorActive" [comment]="currentComment" [mode]="mode" (onPost)="finishEditing()"></app-comment-editor>
+
+</div>

@@ -1,0 +1,14 @@
+#userControl{
+  margin-bottom: 3vh;
+}
+
+#posts{
+  margin-bottom: 3vh;
+}
+
+.comment{
+  background-color: #e7e7e7;
+  margin: .5vw 1vw;
+  padding: 1vw;
+  border-radius: 15px;
+}

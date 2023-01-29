@@ -1,0 +1,13 @@
+<form [formGroup]="loginForm" (submit)="onSubmit()" id="loginForm">
+  <h1>Login</h1>
+  <fieldset class="form-group">
+    <label>Username:</label>
+    <input type="text" class="form-control" formControlName="username">
+  </fieldset>
+  <fieldset class="form-group mb-3">
+    <label>Password:</label>
+    <input type="password" class="form-control" formControlName="password">
+  </fieldset>
+  <input type="submit" value="Login" class="btn btn-success mb-1" [disabled]="!loginForm.valid">
+  <button class="btn btn-warning" (click)="register()">Register</button>
+</form>
